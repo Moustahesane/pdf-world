@@ -8,6 +8,7 @@ import { RestApiServiceService } from '../rest-api-service.service';
 })
 export class ConvertComponent implements OnInit {
   file;
+  download = false; 
   constructor(private rest : RestApiServiceService ) { }
 
   ngOnInit(): void {
@@ -35,11 +36,12 @@ export class ConvertComponent implements OnInit {
     formData.append('file', this.file);
     this.rest.convertTopdf(formData).subscribe(
       res => {
+        this.download = true;
        let elem = document.getElementById('download') as HTMLAnchorElement;
        elem.download=`file${new Date().getTime()}.pdf`
        elem.href = 'data:application/pdf;base64,'+res['base64']; 
        
-       elem.dispatchEvent(new Event('click'));
+       //elem.dispatchEvent(new Event('click'));
       },
       err => {
         console.log(err)

@@ -23,6 +23,7 @@ export class DocumentSignedComponent implements OnInit {
   cw //= canvas.width;
   ch //= canvas.height;
   isDown = false;
+  signateurs;
   lastX;
   lastY;
   PI2 = Math.PI * 2;
@@ -86,9 +87,16 @@ if(self.isDown)
       // redraw all the signatureHoloder
       self.signatureContext.y = self.draggingsignature.y;
       self.signatureContext.x = self.draggingsignature.x;
-      self.signatureContext.clearRect(self.lastX, self.lastY, self.signatureContext.width, self.signatureContext.height);
+
+
+      
+      
+      self.signatureContext.clearRect(0,0,self.$canvas.width,self.$canvas.height);
       self.signatureContext.x = self.lastX,self.signatureContext.y = self.lastY;
-      self.drawSignature(self.image);
+      
+      let imageURL = window.URL.createObjectURL(self.signatureHoloder);
+      self.drawSignature(imageURL);
+     
       
       
     }
@@ -97,6 +105,7 @@ if(self.isDown)
 
   $canvas.mouseup(function(e) {
     // self.handleMouseMove(e);
+    self.isDown = false;
 
   })
 
@@ -117,8 +126,6 @@ if(self.isDown)
     } else {
       self.isDown = true;
     }
-
-
   })
 
 
@@ -139,7 +146,8 @@ drawSignature(url)
   image.onload = () => {
     console.log(self.lastX + '|' + self.lastY)
     this.image = image;
-    self.signatureContext.drawImage(image, self.lastX, self.lastY);
+    
+    self.signatureContext
     console.log(self.signatureContext);
     self.isSingAdded = true;
     
@@ -154,7 +162,7 @@ fileOnChange(e){
 
   console.log("image");
   window.URL = window.URL || window.webkitURL;
-  const file = e.target.files[0];
+  const file =  this.signatureHoloder= e.target.files[0];
   // Create a data URL from the image file
   let imageURL = window.URL.createObjectURL(file);
   this.drawSignature(imageURL);

@@ -8,9 +8,11 @@ import { CertifComponent } from './certif/certif.component';
 import { CommonModule } from '@angular/common';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { CertEditorComponent } from './cert-editor/cert-editor.component';
-import { DocumentSignedComponent } from './document-signed/document-signed.component';
+//import { DocumentSignedComponent } from './document-signed/document-signed.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UploadSignatureComponent } from './upload-signature/upload-signature.component';
+import { VevioEditorComponent } from './vevio-editor/vevio-editor.component';
+import { EditorComponent } from './editor/editor.component';
 
 @NgModule({
   declarations: [
@@ -18,8 +20,10 @@ import { UploadSignatureComponent } from './upload-signature/upload-signature.co
     ConvertComponent,
     CertifComponent,
     CertEditorComponent,
-    DocumentSignedComponent,
-    UploadSignatureComponent
+   // DocumentSignedComponent,
+    UploadSignatureComponent,
+    VevioEditorComponent,
+    EditorComponent
   ],
   imports: [
     BrowserModule,

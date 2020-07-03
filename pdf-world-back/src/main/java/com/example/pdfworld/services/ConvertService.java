@@ -35,7 +35,7 @@ public class ConvertService {
 	    if(!Objects.isNull(file))
 	    {
 	    	
-	    	String Uri ="pdf.pdf";
+	    	
 	    	@SuppressWarnings("deprecation")
 			RandomAccessFileOrArray accessFileOrArray = new RandomAccessFileOrArray(file.getInputStream());
 	    	int numberOfPages = TiffImage.getNumberOfPages(accessFileOrArray);

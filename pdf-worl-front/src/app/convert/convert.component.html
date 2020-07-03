@@ -1,20 +1,28 @@
 <div class="container p-auto">
-    <h5 class="m-auto">Merci de choissiez le Fichier tiff</h5>
+    <h5 class="m-auto">Merci de choisissez le Fichier Tiff</h5>
 <div class="card-body m-auto">
-    <div class="form-group">
+    <div class="form-group" hidden>
         Fichier Tiff
-        <label class="custom-file btn btn-sm btn-primary"  >
+        <label class="custom-file"  >
           <input type="file" name="tiffFile" id="tiffFile" placeholder="tiffFile" class="custom-file-input" aria-describedby="tiffFile" (change)="tiffFileChange($event)">
           <span class="custom-file-control"></span>
         </label>
-        <small id="fileHelpId" class="form-text text-muted">Fichier Tiff</small>
+        
       </div>
-      <button (click)="documentConvert()">convert</button>
-      <a id="download">download</a>
+
+      <div class="form-group row">
+        <label for="ft">Merci de choisir le Fichier Tiff</label>
+        <input type="file" class="form-control-file" name="" id="ft" placeholder="" aria-describedby="fileHelpId" (change)="tiffFileChange($event)">
+        <small id="fileHelpId" class="form-text text-muted">Fichier tiff</small>
+      </div>
+      <button class="btn btn-primary" (click)="documentConvert()">Convert</button>
+      
 </div>
 
 <h5 class="m-auto">Export</h5>
 <div class="card-body m-auto">
+  <a class="btn btn-sm btn-success text-white" id="download">Télécharger</a>
+  <small id="fileHelpId" class="form-text text-muted">Output</small>
     
 </div>
     

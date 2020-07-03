@@ -1,0 +1,37 @@
+<div class="container-fluid border-2 border-dark">
+    <nav class="navbar  navbar-dark bg-dark">
+        <a class="navbar-brand" href="#"> Brand </a>
+        
+        <div class="collapse navbar-collapse" id="navbarText">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#"> Convertir <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"> Certifier </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"> Puls </a>
+            </li>
+          </ul>
+          <span class="navbar-text">
+            Contact @VevioSys
+          </span>
+        </div>
+      </nav>
+      <input type="file" id="fileupload" (change)="onFileChange($event)" hidden/>
+      <input type="file" id="docupload" (change)="uploadDocumentchange($event)"/> <a id="tele">Tele</a> <a (click)="uploadDocument()">upload</a>
+     <div class="canvas-container mx-auto d-flex bg-dark py-2">
+        
+     
+        <canvas id="paper" (mouseup)="onMouseUp($event)" (mousedown)="onMouseDown($event)">
+
+
+        </canvas>
+               
+
+
+     </div>
+</div>
+
+
