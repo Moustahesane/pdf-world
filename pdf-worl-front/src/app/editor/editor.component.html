@@ -19,19 +19,43 @@
           </span>
         </div>
       </nav>
-      <input type="file" id="fileupload" (change)="onFileChange($event)" hidden/>
-      <input type="file" id="docupload" (change)="uploadDocumentchange($event)"/> <a id="tele">Tele</a> <a (click)="uploadDocument()">upload</a>
-     <div class="canvas-container mx-auto d-flex bg-dark py-2">
+      <div class="container-fluid d-flex workspace bg-dark">
+
+
+
+        <div class="canvas-container mx-auto d-flex py-2">
         
      
-        <canvas id="paper" (mouseup)="onMouseUp($event)" (mousedown)="onMouseDown($event)">
+          <canvas id="paper" (mouseup)="onMouseUp($event)" (mousedown)="onMouseDown($event)">
+  
+  
+          </canvas>
+                 
+  
+  
+       </div>
 
 
-        </canvas>
-               
+        <aside class="menu">
+          <ul>
+            <li><label class="btn" for="fileupload">Add sign</label></li>
+            <li><label class="btn" for="docupload">Add Doc</label></li>
+            <li><a class="btn" id="tele">Tele</a></li>
+            <li><a class="btn" (click)="uploadDocument()">upload</a></li>
+          </ul>
+          
+          <input type="file" id="fileupload" (change)="onFileChange($event)" hidden/>
+          
+
+      <input class="btn" type="file" id="docupload" (change)="uploadDocumentchange($event)" hidden/> 
+       
+      
+        </aside>
 
 
-     </div>
+
+      </div>
+
 </div>
 
 

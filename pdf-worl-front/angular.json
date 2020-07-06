@@ -125,6 +125,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "pdf-worl-front"
+    }
+  },
+  "defaultProject": "pdf-worl-front",
+  "cli": {
+    "analytics": "81d29fdc-5db3-4dca-bc18-b70d0dcdb1ad"
+  }
 }

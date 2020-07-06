@@ -1,0 +1,31 @@
+
+
+.workspace{
+
+    .menu{
+        margin-left: 0;
+         height: inherit;
+         border-left: 2px gainsboro solid;
+         ul {
+            list-style-type: none;
+             text-decoration: none;
+             padding: 0;
+             align-items: center;
+             li : {
+                 list-style: none;
+             }
+         }
+         
+         .btn{
+             
+             color: white;
+             display: inline;
+             text-align: center;
+             padding: 5em;
+             color: darkgray    ;
+             
+         }
+      }
+
+
+}
